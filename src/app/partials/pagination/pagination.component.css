@@ -1,0 +1,42 @@
+.Pagination-template{
+    margin-top: 5rem;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+    .ddc-pagination {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0.5rem -0.25rem; 
+  
+    }
+    .ddc-pagination>*{
+      margin: 0.25rem;
+  
+    }
+  
+  
+    .Pagination-item {
+      width: 32px;
+      height: 32px;font-family: Roboto;
+    
+      border-radius: 6px; 
+      border: solid 1px rgba(0, 0, 0, 0.15);
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      
+    }
+    .ddc-pagination__item>p {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.25rem 0.75rem;
+      white-space: nowrap;
+    }
+  

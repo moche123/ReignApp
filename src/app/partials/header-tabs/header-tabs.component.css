@@ -1,0 +1,122 @@
+.Front-End-Test---Home-view {
+
+    padding: 0 0 20px 0px;
+  }
+
+
+  .Rectangle-2-Copy {
+    font-size: 2rem;
+    padding: 2% 3% 3% 5%;
+    box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+    background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+  }
+
+
+  .Group-button-tab{
+      width: 100%;
+      margin-top: 70px;
+      height: 32px;
+      text-align: center;
+      display: inline-block;
+  }
+
+  .TabAll {
+    /* + */
+    width: 150px;
+    height: 31px;
+    border-radius: 2px;
+    border: solid 1px #d6d6d6;
+    cursor: pointer;
+    padding: 3px 39px 0 40px;
+
+  }
+
+
+  .TabMyFaves {
+    width: 150px;
+    height: 31px;
+    border-radius: 2px;
+    border: solid 1px #d6d6d6;
+    cursor: pointer;
+    padding: 3px 16px 0 17px;
+
+  }
+
+
+
+
+  .TabActive{
+ 
+    border: solid 1px var(--azure);
+    color:    var(--azure);
+  }
+
+
+
+
+ 
+  .ContentTab{
+    font-family: Roboto;
+
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: center;
+  }
+
+  .ContentTabActive{
+    font-family: Roboto;
+
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.75;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--azure);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media (max-width: 650px) {
+
+   
+    .Rectangle-2-Copy {
+        /* font-size: 1.5rem; */
+        text-align: center;
+
+      }
+
+      .Group-button-tab{
+        margin-top: 45px;
+
+    }
+
+  }
+
+  @media(max-width:780px){
+     .Rectangle-2-Copy {
+        text-align:center;
+        margin: 0;
+    }
+
+
+  }
+
+
+

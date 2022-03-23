@@ -1,0 +1,63 @@
+<section class="News-section">
+    <div class="Rectangle-26-Copy-23" #options (click)="toggleSelect()">
+   
+        
+        <img [src]="selectedLanguageImage" height="27px" alt="" *ngIf="selectedLanguageImage != ''">
+        <span class="Text">
+        {{selectedLanguageText}}
+        </span>
+
+        <div class="Toggle-icon" >
+
+            <img src="assets/images/main-view/dropdownicon.png" width="11px" alt="">
+        </div>
+
+    </div>
+
+    <div class="Rectangle-Options" *ngIf="toggleIsDisplayed" #inside>
+
+      
+        <div class="Rectangle-Item" *ngFor="let language of dataLanguages" (click)="selectLanguage(language)">
+            <img [src]="language.photoUrl" height="29px" alt="" class="ImgFramework">
+
+            <span class="Framework-Dropdown">
+                {{language.name}}
+              </span>
+        </div>
+
+
+    </div>
+
+   
+
+</section>
+<div class="Content-found" >
+    <div class="wrapper" *ngIf="!loadingInfo; else loadingTemplate">
+        <div class="Rectangle-Items-Searched" *ngFor="let result of resultSearch">
+            <div class="Text-RectangleItem">   
+                    <div style="display:flex;justify-content: flex-start;text-align: start;  width: 100%;">
+                        <img src="assets/images/main-view/time.svg" width="15px" alt="">
+                        <p style="margin: 0; font-size: small;margin-left: 0.5rem;">3 hours ago by {{result.author}}</p>
+                    </div>                 
+                    <p style="color: #000000 !important;">Realize for React for Visualizing State ﬂow and component hierarchy</p>
+            </div>
+              <div class="Rectangle-Heart">
+                <img src="assets/images/main-view/heartfull.svg"
+                class="iconmonstr-favorite-3">
+              </div>
+
+        </div>
+      
+
+     
+       
+      </div>
+      <ng-template #loadingTemplate>
+        <div style=" width: 100%; display:flex; justify-content: center;">
+            <img src="assets/images/main-view/loading.jpg" alt="">
+        </div>
+      </ng-template>
+</div>
+
+
+<app-pagination></app-pagination>
