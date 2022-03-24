@@ -44,21 +44,21 @@ export class PaginationComponent implements OnInit, OnChanges {
     if (this.numberOfPages < 10) {
       if (this.numberOfPages == 1) {
         this.finalNumPages = [0];
-        this._ls.setItem('marcador', 0);
+        this._ls.setItem('marker', 0);
       } else {
         if (this.numberOfPages == 2) {
           this.finalNumPages = [0, 1];
-          this._ls.setItem('marcador', 1);
+          this._ls.setItem('marker', 1);
         } else {
 
           this.finalNumPages = finalNumberPages.slice(0, this.numberOfPages - 1);
-          this._ls.setItem('marcador', this.finalNumPages);
+          this._ls.setItem('marker', this.finalNumPages);
         }
       }
 
     } else {
       this.finalNumPages = finalNumberPages.slice(0, 10);
-      this._ls.setItem('marcador', 10);
+      this._ls.setItem('marker', 10);
     }
 
   }
@@ -72,13 +72,13 @@ export class PaginationComponent implements OnInit, OnChanges {
   }
 
   public resetPages(): void {
-    this.finalNumPages = finalNumberPages.slice(Number(this._ls.getItem('marcador')), Number(this._ls.getItem('marcador')) + 10);
-    this._ls.setItem('marcador', Number(this._ls.getItem('marcador')) + 10);
+    this.finalNumPages = finalNumberPages.slice(Number(this._ls.getItem('marker')), Number(this._ls.getItem('marker')) + 10);
+    this._ls.setItem('marker', Number(this._ls.getItem('marker')) + 10);
   }
 
   public previousPage(): void {
-    this.finalNumPages = finalNumberPages.slice(Number(this._ls.getItem('marcador')) - 20, Number(this._ls.getItem('marcador')) - 10);
-    this._ls.setItem('marcador', Number(this._ls.getItem('marcador')) - 10);
+    this.finalNumPages = finalNumberPages.slice(Number(this._ls.getItem('marker')) - 20, Number(this._ls.getItem('marker')) - 10);
+    this._ls.setItem('marker', Number(this._ls.getItem('marker')) - 10);
   }
 
 }

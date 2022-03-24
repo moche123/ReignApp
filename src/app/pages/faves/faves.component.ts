@@ -15,7 +15,7 @@ export class FavesComponent implements OnInit {
   public newsPerPage: number = 10;
   public favesPageSelected:number = 0;
   public finalNumPages = finalNumberPages;
-  public marcador:number = 0;
+  public marker:number = 0;
   public generalNumberOfPages:number = 0;
   public showPagination:boolean = false;
 
@@ -32,7 +32,7 @@ export class FavesComponent implements OnInit {
 
   ngOnInit(): void {
     this._ls.setItem('currentView', 'faves');
-    this._ls.setItem('marcador', 0);
+    this._ls.setItem('marker', 0);
     this.getInfoInitial();
 
   }
@@ -52,8 +52,8 @@ export class FavesComponent implements OnInit {
     if(this.numberOfPages>10){
 
 
-      this._ls.setItem('marcador', this.numberOfPages/10);
-      this.marcador = (this.numberOfPages/10);
+      this._ls.setItem('marker', this.numberOfPages/10);
+      this.marker = (this.numberOfPages/10);
 
     }
 
@@ -113,13 +113,13 @@ export class FavesComponent implements OnInit {
 
  
   public goAhead():void{
-    this._ls.setItem('marcador', this.marcador+10);
-    this.finalNumPages = finalNumberPages.slice(this.marcador,this.marcador+10)
+    this._ls.setItem('marker', this.marker+10);
+    this.finalNumPages = finalNumberPages.slice(this.marker,this.marker+10)
   }
 
   public goBack():void{
-    this._ls.setItem('marcador', this.marcador-10);
-    this.finalNumPages = finalNumberPages.slice(this.marcador-20,this.marcador-10)
+    this._ls.setItem('marker', this.marker-10);
+    this.finalNumPages = finalNumberPages.slice(this.marker-20,this.marker-10)
   }
 
 

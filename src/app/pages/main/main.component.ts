@@ -57,7 +57,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this._ls.setItem('currentView', 'main');
-    this._ls.setItem('marcador', 0);
+    this._ls.setItem('marker', 0);
     if (this._ls.getItem('pageMainView') == 0 || !this._ls.getItem('pageMainView')) {
 
       this._ls.setItem('pageMainView', 0);
