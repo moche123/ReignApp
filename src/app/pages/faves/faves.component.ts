@@ -17,7 +17,6 @@ export class FavesComponent implements OnInit {
   public finalNumPages = finalNumberPages;
   public marker:number = 0;
   public generalNumberOfPages:number = 0;
-  public showPagination:boolean = false;
 
   constructor(private _ls: LocalstorageService) {
 
@@ -45,7 +44,6 @@ export class FavesComponent implements OnInit {
   private getInfoInitial():void{
     this.resultSearch = this.getFavorites();
 
-    this.resultSearch.length > 0 ? this.showPagination = true : this.showPagination = false;
 
     this.numberOfPages = Math.ceil(this.resultSearch.length / this.newsPerPage);
 
@@ -92,11 +90,6 @@ export class FavesComponent implements OnInit {
     if(this.resultSearch.length == 0 && this.favesPageSelected > 0){
       this.numberOfPages -= 1;
       this.gotoPage(this.favesPageSelected-1);
-    }else{
-      if(this.favesPageSelected==0){
-        this.showPagination = false;
-        this.finalNumPages = [];
-      }
     }
 
 

@@ -12,7 +12,7 @@
 </div>
 
 
-<div class="Pagination-template" *ngIf="showPagination; else noShowPaginationTemplate">
+<div class="Pagination-template" *ngIf="resultSearch.length>0; else noShowPaginationTemplate">
     <nav aria-label="...">
       <div class="ddc-pagination">
         <div class="Pagination-item" *ngIf="!(finalNumPages[0] == 0)" (click)="goAhead()"><p><</p></div>
@@ -32,8 +32,8 @@
     </nav>
   </div>
 <ng-template #noShowPaginationTemplate>
-    <div style=" display: flex;justify-content: center;">
+  <div style="width: 100%; display: flex; justify-content: center;">
 
-        <img src="assets/images/main-view/reign.png" alt="">
-    </div>
+    <img src="assets/images/main-view/reign.png" alt="">
+  </div>
 </ng-template>
