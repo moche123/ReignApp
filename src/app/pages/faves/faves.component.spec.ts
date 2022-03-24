@@ -1,14 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ArrangedatePipe as  myCustomPipe } from 'src/app/pipes/arrangedate.pipe';
 
 import { FavesComponent } from './faves.component';
+
+
+
 
 describe('FavesComponent', () => {
   let component: FavesComponent;
   let fixture: ComponentFixture<FavesComponent>;
 
   beforeEach(async () => {
+    
     await TestBed.configureTestingModule({
-      declarations: [ FavesComponent ]
+      declarations: [ FavesComponent,myCustomPipe ],
+      providers: [myCustomPipe]
     })
     .compileComponents();
   });
@@ -19,7 +25,13 @@ describe('FavesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+
+  it('should show the favorites', () => {
+    expect(component.resultSearch).toEqual([]);
   });
+
+
+
+
+
 });

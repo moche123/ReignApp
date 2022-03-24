@@ -10,7 +10,5 @@ describe('LocalstorageService', () => {
     service = TestBed.inject(LocalstorageService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+ 
 });

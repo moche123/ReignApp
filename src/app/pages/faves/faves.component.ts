@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalstorageService } from 'src/app/services/localstorage.service';
-import { NewsService } from 'src/app/services/news.service';
 import { finalNumberPages } from 'src/app/utils/finalNumberPages';
 
 @Component({
@@ -54,8 +53,6 @@ export class FavesComponent implements OnInit {
 
 
       this._ls.setItem('marcador', this.numberOfPages/10);
-      //this.marcador = 10;
-
       this.marcador = (this.numberOfPages/10);
 
     }
