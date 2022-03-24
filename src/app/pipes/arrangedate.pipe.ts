@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ArrangedatePipe implements PipeTransform {
 
-  transform(value: any, ...args: unknown[]): unknown {
+  transform(value: any, ...args: unknown[]) {
     let newVal = value.sort((a: any, b: any) => { 
       let date1 = new Date(a.created_at);
       let date2 = new Date(b.created_at);

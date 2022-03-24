@@ -1,0 +1,21 @@
+<div class="Rectangle-Items-Searched">
+
+    <div class="Text-RectangleItem" (click)="goToLink(result?.story_url)">   
+        <div style="display:flex;justify-content: flex-start;text-align: start;  width: 100%;">
+            <img src="assets/images/main-view/time.svg" width="15px" alt="">
+            <p style="margin: 0; font-size: small;margin-left: 0.5rem;">{{timeDifference(result?.created_at)}} by {{result?.author}}</p>
+        </div>     
+        <div style="display:flex;justify-content: flex-start;text-align: start;  width: 100%;">
+    
+            <p style="color: #000000 !important;" *ngIf="result?.story_title?.length<=74">{{ result?.story_title || 'Without story title'}}</p>
+            <p style="color: #000000 !important;" *ngIf="result?.story_title?.length>74">{{ (result?.story_title || 'Without story title') | slice:0:74}}...</p>
+        </div>            
+    </div>
+    
+    <div class="Rectangle-Heart">
+    <img src="assets/images/main-view/heartfull.svg"
+    class="iconmonstr-favorite-3" *ngIf="result?.isFavorite" (click)="toggleFavorite(result)">
+    <img src="assets/images/main-view/emptyheart.svg"
+    class="iconmonstr-favorite-3" *ngIf="!result?.isFavorite" (click)="toggleFavorite(result)">
+    </div>
+</div>

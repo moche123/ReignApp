@@ -1,3 +1,39 @@
-<p>faves works!</p>
+<div class="Content-found" *ngIf="resultSearch">
 
-<app-pagination></app-pagination>
+    <div class="wrapper" *ngIf="!loadingInfo; else loadingTemplate">
+        <app-rectangle-result [result]="result" *ngFor="let result of resultSearch | arrangedate" (newItemEvent)="onDelete($event)">
+        </app-rectangle-result>
+    </div>
+    <ng-template #loadingTemplate>
+        <div style=" width: 100%; display:flex; justify-content: center;">
+            <img src="assets/images/main-view/loading.jpg" alt="">
+        </div>
+    </ng-template>
+</div>
+
+
+<div class="Pagination-template" *ngIf="showPagination; else noShowPaginationTemplate">
+    <nav aria-label="...">
+      <div class="ddc-pagination">
+        <div class="Pagination-item" *ngIf="!(finalNumPages[0] == 0)" (click)="goAhead()"><p><</p></div>
+        <div *ngFor="let page of finalNumPages" >
+
+          <div  (click)="gotoPage(page)" [ngClass]="favesPageSelected == page ? 'Pagination-item-active' : 'Pagination-item'">
+                  
+                  <p>{{page+1}}</p>
+                
+          </div>
+        </div>
+        <div class="Pagination-item" *ngIf="!(finalNumPages[finalNumPages.length-1]+1 == numberOfPages)"
+           (click)="goBack()"><p>></p></div>
+        
+    
+      </div>
+    </nav>
+  </div>
+<ng-template #noShowPaginationTemplate>
+    <div style=" display: flex;justify-content: center;">
+
+        <img src="assets/images/main-view/reign.png" alt="">
+    </div>
+</ng-template>

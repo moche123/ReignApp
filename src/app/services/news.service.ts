@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { LocalstorageService } from './localstorage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +13,9 @@ export class NewsService {
 
   constructor(
     public router: Router,
-    public http: HttpClient
-  ) { }
+    public http: HttpClient,
+    public _ls:LocalstorageService
+    ) { }
 
 
   getNews(language:string, page:number=0): Observable<any> {
@@ -25,4 +27,7 @@ export class NewsService {
         }),
       )
   }
+  
+
+
 }

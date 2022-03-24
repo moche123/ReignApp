@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderTabsComponent } from './partials/header-tabs/header-tabs.component';
 import { PaginationComponent } from './partials/pagination/pagination.component';
 import { ArrangedatePipe } from './pipes/arrangedate.pipe';
+import { RectangleResultComponent } from './partials/components/rectangle-result/rectangle-result.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,13 @@ import { ArrangedatePipe } from './pipes/arrangedate.pipe';
     FavesComponent,
     HeaderTabsComponent,
     PaginationComponent,
-    ArrangedatePipe
+    ArrangedatePipe,
+    RectangleResultComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,FormsModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

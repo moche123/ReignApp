@@ -1,17 +1,17 @@
 <div class="Pagination-template">
     <nav aria-label="...">
       <div class="ddc-pagination">
-        <div class="Pagination-item"><p><</p></div>
-        <div class="Pagination-item"><p>1</p></div>
-        <div class="Pagination-item"><p>2</p></div>
-        <div class="Pagination-item"><p>3</p></div>
-        <div class="Pagination-item"><p>4</p></div>
-        <div class="Pagination-item"><p>5</p></div>
-        <div class="Pagination-item"><p>6</p></div>
-        <div class="Pagination-item"><p>7</p></div>
-        <div class="Pagination-item"><p>8</p></div>
-        <div class="Pagination-item"><p>9</p></div>
-        <div class="Pagination-item"><p>></p></div>
+        <div class="Pagination-item" *ngIf="!(finalNumPages[0] == 0)" (click)="previousPage()"><p><</p></div>
+        <div *ngFor="let page of finalNumPages" >
+
+          <div  (click)="gotoPage(page)" [ngClass]="currentPageViewMain == page ? 'Pagination-item-active' : 'Pagination-item'">
+                  
+                  <p>{{page+1}}</p>
+                
+          </div>
+        </div>
+        <div class="Pagination-item" *ngIf="!(finalNumPages[finalNumPages.length-1]+1 == numberOfPages)"
+           (click)="resetPages()"><p>></p></div>
         
     
       </div>
